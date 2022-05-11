@@ -25,7 +25,7 @@ annotate service.ChartDataEntities with @(
     //Search-Term: #ChartSection
     UI.Chart : {
         Title       : '{i18n>chart}',
-        ChartType   : #Column,
+        ChartType   : #Radar,
         Measures    : [maxAmount],
         Dimensions  : [dimensions],
         MeasureAttributes   : [
@@ -51,8 +51,14 @@ annotate service.ChartDataEntities with @(
             {
                 $Type       : 'UI.DataFieldForAction',
                 Action      : 'service1.EntityContainer/unboundAction',
-                Label       : '{i18n>unboundAction}',
+                Label       : 'Action for UI.DataFieldForAction',
             },
+            {
+                $Type       : 'UI.DataFieldForIntentBasedNavigation',
+                Label       : 'Action for UI.DataFieldForIntentBasedNavigation',
+                SemanticObject : '',
+                Action : ''
+            }
         ]
     },
     UI.Chart #areaChart : {
